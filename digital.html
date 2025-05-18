@@ -1,1464 +1,700 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital</title>
-    <script src="https://kit.fontawesome.com/a734140caa.js"></script>
-    <style>
-      :root{
-        --mainColor: white;
-      }
-        *{
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-        }
-        .move{
-        height: 100px;
-        width: 100%;
-        position: fixed;
-        background-color: black;
-        z-index: 10;
-        }
-        .moves{
-        height: 40px;
-        background-color: black;
-        margin: 0px 280px;
-        }
-        #move-left{
-        height: 40px;
-        background-color: black;
-        color: #aeaeae;
-        font-weight: 400;
-        font-size: 10px;
-        line-height: 26px;
-        font-family: "Raleway", sans-serif !important;
-        }
-       .plan-text{
-        margin-top: 5px;
-        }
-        .moves3{
-        width: 100%;
-        height: 60px;
-        background-color: rgb(7, 6, 7); 
-        }
-        .nav{}
-       .logo{
-        width: 300px;
-        height: 50px;
-        margin-left: 30px;
-        margin-top: 3px;
-       }
-      .nav ul{
-        display: flex;
-        justify-content: end;
-       }
-       .nav ul li{
-        list-style: none;
-        margin: -35px -35px;
-        margin-right: 70px;
-       }
-      .nav a{
-        text-decoration: none;
-        color: #ffffff;
-        cursor: pointer;
-        font-size: 16px;
-        font-family: Arial, Helvetica, sans-serif;
-        }
-       a:hover{
-        color: red;
-        text-decoration: underline;
-        transition: calc(0.5);
-       }    
-      .icon{
-        width: 100%;
-        height: 693px;
-        background-color: #000;
-        }
-       .icon-img{
-        width: 120px;
-        height: 625px;
-        padding-top: 110px;
-        flex-direction: column;
-        position: fixed;
-       }
-       .icon-img a {
-        margin-left: 35px;
-        color: white;
-       }
-       .fab:hover{
-        color: red;
-       }
-       .btn{
-        margin: 4px 1px;
-        font-size: 20px;
-       }
-       #degree{
-        color: white;
-        font-size: 25px;
-        font-weight: 500;
-        font-family: "Raleway", sans-serif !important;
-        transform: rotate(-90deg);
-        margin-left: -40px;
-        margin-top: 35px;
-       }
-       .section{
-        width: 1229px;
-        height: 580px;
-        background-color: #000;
-        float: right;
-       }
-       #heading{
-        width: 300px;
-        height: 300px;
-        margin-left: 570px;
-        margin-top: 150px;
-        font-size: 25px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        cursor: pointer;
-        color: #ffffff;
-      }
-      .container1{
-        width: 100%;
-        height: 660px;
-        background-color: #413e3e;
-      }
-      .container2{
-        width: 460px;
-        height: 590px;
-        background-color: #413e3e;
-        margin-left: 120px;
-      }
-      .titles{
-        font-size: 45px;
-        font-weight: 400;
-        font-family: "Raleway", sans-serif !important;  
-        color: rgb(247, 239, 239);
-        padding-top: 40px;    
-      }
-      #paragraph{
-        line-height: 22px;
-        margin-top: 30px;
-        font-size: 17px;
-        color: #aeaeae; 
-        font-family: Okra, Helvetica, sans-serif;
-      }
-      button[type="button"]{
-        margin-left: 8rem;
-        margin-top: 20px;
-         padding: 12px 28px;
-         font-size: 16px;
-         font-family: Okra, Helvetica, sans-serif;
-         cursor: pointer;
-         background-color: red;
-         color: white;
-         border-radius: 5px;
-         border: none;
-      }
-      button[type="button"]:hover{
-        background-color: rgb(202, 29, 188);
-        color: black;
-      }
-      .contianer3{
-        width: 400px;
-        width: 550px;
-       
-        float: right;
-        margin-top: -470px;
-      }
-      .conatiner4{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-      .sub-div{
-        width: 150px;
-        height: 130px;
-        margin: 5px 2px;
-        border-radius: 7px;
-        box-shadow: 1px 1px 7px rgb(0 0 0 / 10%);
-        cursor: pointer;
-      }
-      .title-text{
-        font-size: 13px;
-        color: rgb(243, 218, 218);
-        font-family: Okra, Helvetica, sans-serif;
-        margin-left: 8px;
-        margin-top: 10px;
-      }
-      .link-text{
-        font-size: 13px;
-        color: rgb(243, 218, 218);
-        font-family: Okra, Helvetica, sans-serif;
-        margin-left: -20px;
-        margin-top: 10px;
-      }
-      .sub-text{
-        font-size: 13px;
-        color: rgb(243, 218, 218);
-        font-family: Okra, Helvetica, sans-serif;
-        margin-left: 55px;
-        margin-top: 10px; 
-      }
-      .sub-img{
-        height: 50px;
-        width: 50px;
-        margin-left: 53px;
-        margin-top: 20px;
-      }
-      .sub-div:hover{
-        background-color:rgb(105, 107, 103);
-      }
-      .container5{
-        width: 100%;
-        height: 1540px;
-        background-color: #413e3e;
-      }
-      .container6{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-top: 39px;
-        margin-left: 115px;
-      }
-      .description{
-        width: 370px;
-        height: 340px;
-        margin: 1px 1px;
-        border-radius: 0.25rem;
-        cursor: pointer;
-        border: 1px solid rgba(0,0,0,.125);
-        box-shadow: 5px 5px 15px rgb(0 0 0 / 10%);
-      }
-      .description:hover{
-        background-color:rgb(105, 107, 103);
-      }
-      #description-head{
-        font-size: 37px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        color: #fff;
-        margin-left: 120px;
-        padding-top: 27px;
-      }
-      .description-sub-head{
-        color: White;
-        font-size: 25px;
-        margin-left: 20px;
-        margin-top: 12px;
-        font-family: "Raleway", sans-serif !important;
-      }
-      .description-text{
-        color: rgb(79, 79, 79);
-        font-family: Okra, Helvetica, sans-serif;
-        line-height: 25px;
-        margin-left: 20px;
-        margin-top: 12px;
-      }
-      .description-submit{
-        padding: 11px 33px;
-        font-size: 18px;
-        font-weight: lighter;
-        cursor: pointer;
-        align-items: center;
-        border-radius: 5px;
-        border: none;
-        background-color: #000;
-        color: #fff;
-        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-        opacity: 0.6;
-        margin-left: 20px;
-        margin-top: 50px;
-      }
-      #but10{
-        margin-top: 13px;
-      }
-      #but11{
-        margin-top: 34px;
-      }
-      #but12{
-        margin-top: 34px;
-      }
-      #but13{
-        margin-top: 37px;
-      }
-      #but14{
-        margin-top: 58px;
-      }
-      #but15{
-        margin-top: 10px;
-      }
-      #but16{
-        margin-top: 10px;
-      }
-      #but17{
-        margin-top: 10px;
-      }
-      #but18{
-        margin-top: 37px;
-      }
-      #but19{
-        margin-top: 46px;
-      }
-      #but20{
-        margin-top: -1px;
-      }
-      #but21{
-        margin-top: 123px;
-      }.container5{
-        width: 100%;
-        height: 1540px;
-        background-color: #413e3e;
-      }
-      .container6{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-top: 39px;
-        margin-left: 120px;
-      }
-      .description{
-        width: 370px;
-        height: 340px;
-        margin: 1px 1px;
-        border-radius: 0.25rem;
-        cursor: pointer;
-        border: 1px solid rgba(0,0,0,.125);
-        box-shadow: 5px 5px 15px rgb(0 0 0 / 10%);
-      }
-      .description:hover{
-        background-color:rgb(105, 107, 103);
-      }
-      #description-head{
-        font-size: 37px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        color: #fff;
-        margin-left: 120px;
-        padding-top: 27px;
-      }
-      .description-sub-head{
-        color: White;
-        font-size: 25px;
-        margin-left: 20px;
-        margin-top: 12px;
-        font-weight: 500;
-        font-family: "Raleway", sans-serif !important;
-      }
-      .description-text{
-        color: #aeaeae;
-        font-family: Okra, Helvetica, sans-serif;
-        line-height: 25px;
-        margin-left: 20px;
-        margin-top: 12px;
-      }
-      .description-submit{
-        padding: 11px 33px;
-        font-size: 18px;
-        font-weight: lighter;
-        cursor: pointer;
-        align-items: center;
-        border: 2px solid red;
-        background-color: #413e3e;
-        border-radius: 5px;
-        color: #fff;
-        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-        opacity: 0.9;
-        margin-left: 20px;
-        margin-top: 50px;
-      }
-      #but10{
-        margin-top: 13px;
-      }
-      #but11{
-        margin-top: 34px;
-      }
-      #but12{
-        margin-top: 34px;
-      }
-      #but13{
-        margin-top: 37px;
-      }
-      #but14{
-        margin-top: 58px;
-      }
-      #but15{
-        margin-top: 10px;
-      }
-      #but16{
-        margin-top: 10px;
-      }
-      #but17{
-        margin-top: 10px;
-      }
-      #but18{
-        margin-top: 37px;
-      }
-      #but19{
-        margin-top: 46px;
-      }
-      #but20{
-        margin-top: -1px;
-      }
-      #but21{
-        margin-top: 123px;
-      }
-      .banierbrand{
-        width: 100%;
-        height: 630px;
-        background-image: url(./lezandbrandimg/mouse.jpeg);
-        background-size: cover;
-      }
-      .brand-title{
-        font-family: "Raleway", sans-serif !important;
-        font-size: 36px;
-        line-height: 55px;
-        font-weight: 600; 
-        text-align: center;
-        color: white;
-        padding-top: 60px;
-        font-style: normal !important;
-        z-index: -1111111;
-      }
-      .banershow{
-        width: 470px;
-        height: 350px;
-        margin-left: 121px;
-        margin-top: 40px;
-      }
-      .bainer-title{
-        font-size: 26px;
-        color: white;
-        font-weight: 400;
-        font-family: "Raleway" , sans-serif !important;
-      }
-      .bainer-sub-title{
-        font-size: 15px;
-        color: white;
-        font-family: "Raleway" , sans-serif !important;
-        margin-top: 12px;
-      }
-      .bainer-multi-title{
-        font-size: 16px;
-        font-weight: 400;
-        font-style: normal;
-        line-height: 26px;
-        color: #aeaeae;
-        font-family: "Raleway" , sans-serif !important;
-        margin-top: 20px;
-      }
-      #bainer-sub-multi{
-        font-size: 16px;
-        font-weight: 400;
-        font-style: normal;
-        line-height: 26px;
-        color: #aeaeae;
-        font-family: "Raleway" , sans-serif !important;
-        margin-top: -7px;
-      }
-      #goto{
-        padding-top: 30px;
-        text-decoration: none;
-      }
-      a:hover{
-        color: red;
-      }
-      #icon{
-        width: 640px;
-        height: 360px;
-        margin-top: -364px;
-        float: right;
-        display: flex;
-        flex-direction: row;
-      }
-      .icon-text{
-        width: 100px;
-        height: 270px;
-        margin: 2px 2px;
-      }
-      .siulation{
-        width: 210px;
-        list-style: none;
-        line-height: 45px;
-        font-size: 21px;
-        font-weight: 700;
-        font-family: "Raleway" , sans-serif !important;
-        color: #fff;
-      }
-      .number{
-        width: 70px;
-        list-style: none;
-        line-height: 45px;
-        color: white;
-        text-align: center;
-        text-transform: uppercase;
-        font-family: "Raleway" , sans-serif !important;
-      }
-      .icon-arow{
-        width: 70px;
-        list-style: none;
-        line-height: 45px;
-        text-align: center;
-      }
-      .stringNumber{
-        width: 70px;
-        list-style: none;
-        line-height: 45px;
-        text-transform: uppercase;
-        color: #fff;
-        text-align: center;
-        font-family: "Raleway" , sans-serif !important;
-      }
-      .persentage{
-        width: 100px;
-        list-style: none;
-        font-size: 31px;
-        line-height: 45px;
-        color: #ff5f5f;
-        text-transform: uppercase;
-        text-align: center;
-        font-weight: 400;
-        font-family: "Raleway" , sans-serif !important;
-      }
-      #line{
-        margin-top: 300px;
-        margin-left: -537px;
-        height: 2px;
-        width: 530px;
-        background-color: rgb(199, 192, 199);
-      }
-      #brand-para{
-       margin-top: 320px;
-       margin-left: -530px;
-       font-size: 15px;
-       font-weight: 400;
-       color: #525151;
-      }
-      .icon-subimg{
-        display: flex;
-        margin-left: 250px;          
-      }
-      .milti-img{
-        height: 70px;
-        width: 205px;
-        border-radius: 5px;
-        margin: 5px 5px;
-        cursor: pointer;
-      }
-      .banerimg{
-        background-image: url(https://leadsandbrands.com/public/images/brands/1.png);
-      }
-      .banerimg0{
-        background-image: url(https://leadsandbrands.com/public/images/brands/2.png);
-      }
-      .banerimg00{
-        background-image: url(https://leadsandbrands.com/public/images/brands/3.png);
-      }
-      .banerimg000{
-        background-image: url(https://leadsandbrands.com/public/images/brands/4.png);
-      }
-      .section2{
-        width: 100%;
-        height: 37.5rem;
-        background-color: #000;
-      }
-      #img-difi{
-         margin-left: 8rem;
-         padding-top: 8rem;
-         font-size: 45px;
-         font-weight: 600;
-         font-family: "Raleway", sans-serif !important;
-         color: #fff;
-      }
-      #img-text{
-        width: 200px;
-        height: 6rem;
-        margin-left: 8rem;
-        margin-top: 1rem;
-        font-size: 24px;
-        line-height: 29px;
-        font-weight: 500;
-        font-style: normal;
-        font-family: "Raleway", sans-serif !important;
-      }
-      #red{
-        color: red;
-      }
-      #white{
-        color: #fff;
-      }
-      #reds{
-        color: red;
-      }
-      #img-join{
-        margin-left: 8rem;
-        margin-top: 1.7rem;
-        color: #fff;
-        font-size: 1.2rem;
-        font-weight: 500;
-        font-family: "Raleway" , sans-serif !important;
-      }
-      .officeimg{
-        width: 52rem;
-        height: 27rem;
-        float: right;
-        margin-top: -255px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-      .writing-img{
-        width: 15rem;
-        height: 13.4rem;
-        margin: 1px 1px;
-        cursor: pointer;
-      }
-      .color1{
-        background-image: url(https://leadsandbrands.com/public/images/team/1.jpeg);
-        background-size: cover;
-        filter: grayscale(100%);
-      }
-      .color2{
-        background-image: url(https://leadsandbrands.com/public/images/team/2.jpeg);
-        background-size: cover;
-        filter: grayscale(100%);
-      }
-      .color3{
-        background-image: url(https://leadsandbrands.com/public/images/team/3.jpeg);
-        background-size: cover;
-        filter: grayscale(100%);
-      }
-      .color4{
-        background-image: url(https://leadsandbrands.com/public/images/team/5.jpeg);
-        background-size: cover;
-        filter: grayscale(100%);
-      }
-      .color5{
-        background-image: url(https://leadsandbrands.com/public/images/team/6.jpg);
-        background-size: cover;
-        filter: grayscale(100%);
-      }
-      .color1:hover{
-        filter: none;
-        transform: scale(1.01);
-      }
-      .color2:hover{
-        filter: none;
-        transform: scale(1.01);
-      }
-      .color3:hover{
-        filter: none;
-        transform: scale(1.01);
-      }
-      .color4:hover{
-        filter: none;
-        transform: scale(1.01);
-      }
-      .color5:hover{
-        filter: none;
-        transform: scale(1.01);
-      }
-      .overlay{
-        margin-top: 9em;
-        margin-left: 2em;
-      }
-      #overlay-text{
-        margin-left: 45px;
-        color: #fff;
-        font-size: 22px;
-        font-family: "Rawilay" , sans-serif !important;
-        line-height: 35px;
-      }
-      #overlay-sub-text{
-        text-align: center;
-        color: #fff;
-        font-family: "Rawilay" , sans-serif !important;
-        font-size: 17px;
-      }
-      .move-text{
-        width: 100%;
-        height: 36em;
-        background-color: #000;
-      }
-      .slide{
-        width: 100%;
-        height: 36em;
-        background-image: url(./logoimg/earth.jpeg);
-        background-size: cover;
-        float: right;
-      }
-      #slide-text{
-        font-size: 36px;
-        font-weight: 600;
-        font-family: "Raleway", sans-serif !important;
-        font-style: normal !important;
-        color:  var(--mainColor); 
-        margin-top: 83px;
-        margin-left: 90px;
-      }
-      .text-descriptino{
-        margin-top: 45px;
-        margin-left: 90px;
-       
-      }
-      .text-descriptino small{
-        color: #aeaeae;
-        font-size: 16px;
-        font-weight: 400;
-        font-family: "Raleway" , sans-serif !important;
-        line-height: 23px;
-        margin: 15px 0px;
-      }
-      .nextpara{
-        float: right;
-        margin-top: -180px;
-        margin-right: 150px;
-      }
-      #now{
-        font-size: 40px;
-        font-weight: 500;
-        font-family: "Raleway" , sans-serif !important;
-        opacity: 0.2px;
-        color: #cfc2c2;
-        cursor: pointer;
-      }
-      #now:hover{
-        color: #fff;
-      }
-      .scrollmount{
-        margin-top: -40px;
-        margin-right: -115px;
-      }
-      .degree360{
-        position: relative;
-        font-size: 40px;
-        font-weight: bold;
-        color: rgb(243, 2, 2);
-        cursor: pointer;
-      }
-      .degree360:hover{
-        color: red;
-      }
-      .fa-arrow-right{
-        animation: loop 2s infinite alternate;
-        left: 50%; 
-        right: 50%;
-        animation-delay: 0.5s;
-        animation-duration: 0.8s;        
-        position: relative;
-        transform: translate(-50%, -0%);
-        animation-timing-function: ease-in-out;
-      }
-      .scroll{
-        width: 100%;
-        height: 36.4rem;
-        background-color: #000;
-      }
-      #scroll-texts{
-        font-size: 36px;
-        font-weight: 600;
-        text-align: center;
-        padding-top: 70px;
-        font-family: "Raleway" , sans-serif !important;
-        color: var(--mainColor);
-      }
-      .slidewrap{
-        width: 980px;
-        height: 370px;
-        background-color: #000;
-        position: relative;
-        margin-left: 180px; 
-        margin-top:85px;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-      }
-      .wrapmove{
-      }
-      .wraptext{
-        width: 980px;
-        height: 370px;
-        margin-top: -70px;
-        background-color: #000;
-      }
-      #move-text{
-        text-align: center;
-        justify-content: center;
-        font-size: 17px;
-        font-weight: 400;
-        font-style: normal;
-        line-height: 26px;
-        color: #aeaeae;
-        font-family: "Raleway" , sans-serif !important;
-        padding-top: 40px;
-      }
-      #move-sub-text{
-       color: var(--mainColor);
-       font-weight: 500;
-       font-family: "Raleway" , sans-serif !important;
-       text-align: center;
-       justify-content: center;
-       padding-top: 50px;
-       line-height: 50px;
-      }
-      #move-multi-text{
-        color: var(--mainColor);
-        font-weight: 500;
-        font-family: "Raleway" , sans-serif !important;
-        text-align: center;
-      }
-      #prev, #next {
-        width: 50px;
-        line-height: 50px;
-        border-radius: 50%;
-        font-size: 2rem;
-        text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-        text-align: center;
-        color: white;
-        text-decoration: none;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: all 150ms ease;
-      }
-      #prev:hover,#next:hover {
-       background-color: rgba(0, 0, 0, 0.5);
-       text-shadow: 0;
-     }
-     #prev {
-      left: 10px;
-    }
-    #next {
-     right: 10px;
-    }
-    .footer{
-      width: 100%;
-      height: 39em;
-      background-image: url(https://leadsandbrands.com/public/images/backgrounds/map.png);
-      background-size: cover;
-      background-color:#050505;
-    }
-    .main-heading{
-      margin-left: 130px;
-      padding-top: 75px;
-      color: var(--mainColor);
-      font-size: 36px;
-      font-weight: 600;
-      font-style: normal !important;
-      font-family: "Raleway", sans-serif !important
-    }
-    .row{
-      width: 600px;
-      height: 350px;
-      margin-top: 40px;
-      margin-left: 120px;
-    }
-    #fullfill{
-      
-    }
-    #updown{
-      font-size: 15px;
-      color: white;
-      font-weight: 400;
-      font-family: "Raleway" , sans-serif !important;
-    }
-    .form-control{
-      margin-top: 4px;
-      font-family: "Object Sans";
-      padding: 10px;
-      background-color: #3b3b3b;
-      border-radius: 4px;
-      width: 290px;
-      font-size: 16px;
-      line-height: 23px;
-      color: white;
-      outline: rgba(255, 255, 255, 0);
-      border: 1px solid rgba(255, 255, 255, 0);
-      transition: all 0.25s 
-    }
-    input:hover{
-      border: 1px solid red;
-    }
-    .form2{
-      margin-top: -344px;
-    }
-    .btnss{
-      margin-top: 22px;
-      margin-left: -2px;
-      width: 167px;
-      height: 45px;
-      background-color: #f30008;
-      color: white;
-      cursor: pointer;
-      display: inline-block;
-      font-weight: 400;
-      text-align: center;
-      white-space: nowrap;
-      vertical-align: middle;
-      user-select: none;
-      border: 1px solid transparent;
-      padding: 0.375rem 0.75rem;
-      font-size: 1rem;
-      line-height: 1.5;
-      border-radius: 0.25rem;
-      transition: color .15s ease-in-out, background-color .15s ease-in-out,
-         border-color .15s ease-in-out,
-         box-shadow .15s ease-in-out;
-    }
-    .columns{
-      width: 600px;
-      height: 330px;
-      float: right;
-      margin-top: -460px;
-    }
-    .map-point{
-      margin-top: 60px;
-      margin-left: 120px;
-    }
-    img[alt="location"]{
-      height: 31px;
-      width: 19px;
-      padding-top: -7px;
-    }
-    #footer-icon-text{
-      margin-left: -2px;
-      font-size: 15px;
-      font-weight: 400;
-      color: white;
-      margin-top: -18px;
-      padding-left: 7px;
-      font-family: "Raleway", sans-serif !important;
-    }
-    .social-m{
-      margin-top: 140px;
-      margin-left: 25px;
-    }
-    .social-m label{
-    font-size: 15px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 23px;
-    color: white;
-    font-family: 'Raleway', sans-serif !important;
-    }
-    .social-m a{
-    font-size: 15px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 23px;
-    text-decoration: none;
-    color: white;
-    font-family: 'Raleway', sans-serif !important;
-    }
-    .social-m p a{
-      font-size: 1rem;
-      font-weight: 500;
-      font-style: normal;
-      text-decoration: none;
-      color: red;
-      font-family: 'Raleway', sans-serif !important;
-    }
-    .footer-bottom{
-      width: 500px;
-      height: 40px;
-      margin-top: -40px;
-      margin-left: 410px;
-    }
-    #desk-f{
-      text-align: center;
-      padding-top: 12px;
-      font-size: 15px;
-      font-weight: 400;
-      font-family: "Raleway", sans-serif !important;
-      color: var(--mainColor); 
-    }
-    #desk-f a {
-      text-decoration: none;
-    }
-      @keyframes loop {
-        0%{
-          transform: translateY(0px);
-        }
-        100%{
-          transform: rotateX(3px);
-        }
-      }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital</title>
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="https://kit.fontawesome.com/a734140caa.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
 </head>
+
 <body>
-  <div class="move">
-    <div class="moves">
-        <marquee id="move-left">
-           <h1 class="plan-text">We are a Professional Web Development &amp; Digital Marketing Company in Bhopal.</h1>
-        </marquee>
+  <!-- Fixed Header -->
+  <header class="main-header fixed-top">
+    <!-- Marquee -->
+    <div class="header-marquee">
+      <marquee behavior="scroll" direction="left" class="center-marquee">
+        <span class="marquee-text">We are a Professional Web Development & Digital Marketing Company in Bhopal.</span>
+      </marquee>
     </div>
-   <div class="moves3">
-      <div class="nav">
-        <img class="logo" src="https://leadsandbrands.com/public/images/l&b.png">
-          <ul>
-             <li>
-                <a href="#">Home</a>
-             </li>
-             <li>
-                <a href="#">Service</a>
-             </li>
-             <li>
-                <a href="#">Team</a>
-             </li>
-             <li>
-                <a href="#">About</a>
-             </li>
-             <li>
-               <a href="#">Portfolio</a>
-             </li>
-             <li>
-              <a href="#">Contact</a>
-             </li>
-          </ul>
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark px-3">
+      <a class="navbar-brand" href="#">
+        <img src="https://leadsandbrands.com/public/images/l&b.png" alt="Logo" class="logo">
+      </a>
+
+      <!-- Hamburger -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Desktop Menu -->
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Offcanvas Mobile Menu -->
+  <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menu</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">Services</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">Team</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+      </ul>
     </div>
   </div>
-</div>
-  <div class="icon">
-        <div class="icon-img">
-            <a href="#" class="btn">
-                <i class="fa-brands fa-linkedin-in"></i>
-            </a><br><br>
-            <a href="#" class="btn">
-                <i class="fab fa-facebook-f"></i>
-            </a><br><br>
-            <a href="#" class="btn">
-                <i class="fab fa-instagram"></i>
-            </a><br><br>
-            <a href="#" class="btn">
-                <i class="fab fa-twitter"></i>
-            </a><br><br>
-            <a href="#" class="btn">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a><br><br>
-            <a href="#" class="btn">
-                <i class="fa-sharp fa-solid fa-location-dot"></i>
-            </a> 
-            <div id="degree">Follow us</div>
-        </div>
-        <div class="section">
-          <video style="width: 100%;" loop="" autoplay="yes" controls muted>
-            <source src="https://leadsandbrands.com/public/video/v-main.mp4" type="">
-        </video>
-        </div>
-  </div>
-    <div class="container1">
-        <div class="container2">
-          <h1 class="titles">What we do</h1>
-          <p id="paragraph">Leads and Brands is the best digital marketing and web
-             <br>design agency in Bhopal, India, which also offers a range of
-             <br> creative designing services to clients in order to help them
-             <br> grow their business.<br><br>
-              Our team of experienced professionals helps drive your
-              <br> business online by developing quality websites and mobile 
-              <br>applications that are user-friendly and easy to access. We 
-              <br>also perform top-notch SEO, manage paid advertising<br> 
-              campaigns, social media marketing, and take care of all 
-              <br>aspects of internet marketing.<br><br>
-              Regardless of the size or scope of your business, Leads and
-              <br> Brands is always ready to serve your needs. By offering 
-              <br>innovative digital experiences, we have established 
-              <br>ourselves as one of the most respected and reputable
-               <br>digital marketing agency in Bhopal and beyond
-          </p>
-          <button type="button">View All Submit</button>
-        </div>
-        <div class="contianer3">
-          <div class="conatiner4">
-          <div class="sub-div">
-            <img  class="sub-img"src="https://leadsandbrands.com/public/images/icon/n-icon/dg.svg">
-            <h5 class="title-text">DIGITAL MARKETING</h5>
-          </div>
-          <div class="sub-div">
-            <img class="sub-img" src="https://leadsandbrands.com/public/images/icon/n-icon/seo.svg">
-            <h5 class="sub-text">SEO</h5>
-          </div>
-          <div class="sub-div">
-           <img  class="sub-img" src="https://leadsandbrands.com/public/images/icon/n-icon/ppc.svg">
-            <h5 class="sub-text">PPC</h5>
-          </div>
-          <div class="sub-div">
-            <img class="sub-img" src="https://leadsandbrands.com/public/images/icon/n-icon/sem.svg">
-            <h5 class="sub-text">SEM</h5>
-          </div>
-          <div class="sub-div">
-            <img class="sub-img" src="https://leadsandbrands.com/public/images/icon/n-icon/sm.svg">
-            <h5 class="sub-text">SMM</h5>
-          </div>
-          <div class="sub-div">
-            <img class="sub-img" src="https://leadsandbrands.com/public/images/icon/n-icon/cw.svg">
-            <h5 class="sub-text link-text">CONTENT</h5>
-          </div>
-          <div class="sub-div">
-            <img class="sub-img" src="https://leadsandbrands.com/public/images/icon/n-icon/wd.svg">
-            <h5 class="title-text" >WEB DEVELOPMENT</h5>
-          </div>
-          <div class="sub-div">
-            <img class="sub-img" src="https://leadsandbrands.com/public/images/icon/n-icon/ap.svg">
-            <h5 class="title-text">APP DEVELOPMENT</h5>
-          </div>
-          <div class="sub-div">
-            <img class="sub-img" src="https://leadsandbrands.com/public/images/icon/n-icon/email.svg">
-            <h5 class="title-text">EMAIL MARKETING</h5>
-          </div>
-          </div>
-        </div>
+
+
+
+  <!-- Video -->
+  <section class="video-section">
+    <div class="video-container">
+      <video autoplay muted loop controls playsinline>
+        <source src="https://leadsandbrands.com/public/video/v-main.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
-    <div class="container5">
-        <h1 id="description-head">All Services</h1>
-        <div class="container6">
-          <div class="description">
-            <h3 class="description-sub-head">Digital Marketing</h3>
-            <p class="description-text"> Digital Marketing is all about strategy and <br>planning & the next step in execution and<br> that's what Leads and Brands do for your <br>business. We help you to create and<br> innovative digital strategies for your business<br> that work for you by engaging with your<br> relevant audience. Which helps to generate<br> leads and traffic.</p>
-            <input type="button" value="Read More" class="description-submit" id="but10">
-          </div>
-          <div class="description">
-            <h3 class="description-sub-head">SEO</h3>
-            <p class="description-text">Search Engine Optimisation (SEO) is all about <br>getting organic traffic on your website and<br> understanding the behavior of user with our<br> website. A well-rounded helps Search Engine <br>Optimisation generates organic traffic which <br>helps your business to generate leads and<br> conversions.</p>
-            <input type="button" value="Read More" class="description-submit" id="but11">
-          </div>
-          <div class="description">
-            <h3 class="description-sub-head">Paid Search Marketing</h3>
-            <p class="description-text">Paid Search Engine Marketing is also known <br>as Search Engine Marketing or Pay Per Click<br>(PPC) in which we pay google to show our <br>results on top. Leads and Brands have the <br>right people, technology, and approach to<br> ensure your paid search activity is at the<br> forefront of digital innovation.</p>
-            <input type="button" value="Read More" class="description-submit" id="but12">
-          </div>
-          <div class="description">
-            <h3 class="description-sub-head">Social Media</h3>
-            <p class="description-text">Social Media is the most important platform<br> for branding and promotion. Taking care of<br> your business Social Media is about<br> understanding the target Market. A well-<br>rounded social media strategy that is fully<br> integrated with your overall digital marketing<br> strategy is what social media is all about.</p>
-            <input type="button" value="Read More" class="description-submit" id="but13">
-          </div>
-          <div class="description">
-            <h3 class="description-sub-head">Content Marketing</h3>
-            <p class="description-text">At Leads and Brands, we mainly focus on<br> content and creatives. We create a strategy<br> through our creatives that attracts and<br> engages your target audience. Basically, the<br> goal of content marketing is to engage a<br> higher number of people visiting your site.</p>
-            <input type="button" value="Read More" class="description-submit" id="but14">
-          </div>
-          <div class="description">
-            <h3 class="description-sub-head">Web Developement</h3>
-            <p class="description-text">Website design and web development is the <br>brain of everything we do. Leads and Brands <br>is well known as a website development <br>company in India. All of this requires years of <br>experience along with great skill and<br> precision. We focus on our client’s vision,<br> requirements and deliver end-to-end custom <br>website development services.</p>
-            <input type="button" value="Read More" class="description-submit" id="but15">
-          </div>
-          <div class="description">
-            <h3 class="description-sub-head">App Development</h3>
-            <p class="description-text">Leads and Brands is also an Android mobile<br> app develppment company in Bhopal, India.<br> We know that, in today's digital world how<br> mobile applications have been improtant for<br> business. Our experts team of appicaltion<br> developers conducts a deep analysis of<br> client's requirements, and then let no extra <br>second go to waste for starting their work.</p>
-            <input type="button" value="Read More" class="description-submit" id="but16">
-          </div>
-          <div class="description">
-            <h3 class="description-sub-head">Email Marketing</h3>
-            <p class="description-text">E-mail Marketing is all about promoting your<br> business's products and services through<br> sending mail to your existing clients. This<br> marketing helps you to retarget your<br> customers. The majority of businesses use<br> this platform for promotion and branding. E-<br>mail marketing allows for much higher <br>conversion rates.</p>
-            <input type="button" value="Read More" class="description-submit" id="but17">
-          </div>
-          <div class="description">
-            <h3 class="description-sub-head">Bulk Messaging</h3>
-            <p class="description-text">Bulk messaging is all about sending <br>messages to our clients for remiding about<br> our services. And also if you introduce new<br> product or services in market and you want to<br> inform your customers you can take the help<br> of bulk messaging. There are many software <br>in market for sending and receiving bulk SMS.</p>
-            <input type="button" value="Read More" class="description-submit" id="but18">
-          </div>
-          <div class="description">
-            <h3 class="description-sub-head">Google Local Listing</h3>
-            <p class="description-text">Google local listing also known as google my<br> business, where you can put all information <br>about your company. Your address, your <br>services your website, and everything you <br>want to share, as much relevant possible <br>information as possible, especially physical<br> location and keywords.</p>
-            <input type="button" value="Read More" class="description-submit" id="but19">
-          </div>
-          <div class="description">
-            <h3 class="description-sub-head">E-commerce Solution</h3>
-            <p class="description-text">If you have an online business and you're<br> having long-term business goals then you<br> must need an e-commerce website. It'll help<br> your business to get more traffic and sales. At <br>Leads and Brands, we use advanced and <br>innovative software to build engaging user-<br>friendly websites or software. Which helps<br> your customer to find enjoyable and easy to<br> navigate designs.</p>
-            <input type="button" value="Read More" class="description-submit" id="but20">
-          </div>
-          <div class="description">
-            <h3 class="description-sub-head"> Design</h3>
-            <p class="description-text">At Leads and Brands, we offer professional <br>and creative graphic services which helps<br> company to build brand image in market and<br> reflect your unique identity.</p>
-            <input type="button" value="Read More" class="description-submit" id="but21"> 
-          </div>
-        </div>
+    <div class="social-sidebar">
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i></a>
+        <div class="follow-text">Follow us</div>
+      </div>
     </div>
-    <div class="banierbrand">
-        <h1 class="brand-title">Success Stories</h1>
-        <div class="banershow">
-          <div class="bainer-text">
-            <h2 class="bainer-title">Motel Tamia</h2>
-            <p class="bainer-sub-title">Jungle Resort</p>
-            <p class="bainer-multi-title">Motel Tamia is one of the best jungle properties in Satpuda<br> tiger reserve, India. They were planning an expansion, and<br> developed more cottages. Our main task was to generate<br> more leads, which could be converted into visitors.</p><br>
-            <p id="bainer-sub-multi">We understood the whole business idea, made a deep drive,<br> and found the most effective channels and came up with a full<br> strategy to maximize their occupancy percentage in the most<br> efficient way possible.</p>
-            <a href="#" id="goto">www.moteltamia.com</a>
-          </div>
-        </div>
-        <div id="icon">
-            <div class="icon-text siulation">
-              <li>Occupancy</li>
-              <li>Revenue</li>
-              <li>Cost Per Conversion</li>
-              <li>Investment</li>
-            </div>
-            <div class="icon-text number">
-              <li>65%</li>
-              <li>5M</li>
-              <li>200</li>
-              <li>0.12M</li>
-            </div>
-            <div class="icon-text icon-arow">
-              <li><img src="https://leadsandbrands.com/public/images/icon/right-arrow.png"></li>
-              <li><img src="https://leadsandbrands.com/public/images/icon/right-arrow.png"></li>
-              <li><img src="https://leadsandbrands.com/public/images/icon/right-arrow.png"></li>
-              <li><img src="https://leadsandbrands.com/public/images/icon/right-arrow.png"></li>
-            </div>
-            <div class="icon-text stringNumber">
-              <li>89%</li>
-              <li>13M</li>
-              <li>89</li>
-              <li>0.10M</li>
-            </div>
-            <div class="icon-text persentage">
-              <li>+27%</li>
-              <li>+160%</li>
-              <li>-55%</li>
-              <li>-17%</li>
-            </div>
-            <span id="line"></span>
-            <span id="brand-para">*Numbers have been modified for compliance purposes.</span>
-        </div>
-        <div class="icon-box">
-          <div class="icon-subimg">
-            <div class="milti-img banerimg"></div>
-            <div class="milti-img banerimg0"></div>
-            <div class="milti-img banerimg00"></div>
-            <div class="milti-img banerimg000"></div>
-          </div>
-        </div>
-    </div>
-    <div class="section2">
-        <h1 id="img-difi">Core team</h1>
-        <div id="img-text">
-          <h3 id="red">Teamwork</h3>
-          <h3 id="white">makes the</h3>
-          <h3 id="reds">dream work.</h3>
-        </div>
-        <p id="img-join">Join the crew </p>
-        <div class="officeimg">
-          <div class="writing-img color1">
-            <div class="overlay">
-              <p id="overlay-text">Praharsh</p>
-               <small id="overlay-sub-text">Chief Marketing Officer</small>
-            </div>
-          </div>
-          <div class="writing-img color2">
-            <div class="overlay">
-              <p id="overlay-text">Sanjay</p>
-              <small id="overlay-sub-text">Chief Strategic Planner</small>
-            </div>
-          </div>
-          <div class="writing-img color3">
-            <div class="overlay">
-              <p id="overlay-text">Vikas</p>
-              <small id="overlay-sub-text">Head-Digital Marketing</small>
-            </div>
-          </div>
-          <div class="writing-img color4">
-            <div class="overlay">
-              <p id="overlay-text"> Stuti</p>
-              <small id="overlay-sub-text">Head-Content Writing</small>
-            </div>
-          </div>
-          <div class="writing-img color5">
-            <div class="overlay">
-              <p id="overlay-text"> Boozo</p>
-              <small id="overlay-sub-text">Chief Happiness Officer</small>
+  </section>
+  <!-- End Video -->
+
+  <!-- Service -->
+  <section class="bg-dark-theme py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="">
+            <h1 class="fw-semibold text-white mb-4">What we do</h1>
+            <div class="">
+              <p class="text-white">
+                Leads and Brands is the best digital marketing and web
+                design agency in Bhopal, India, which also offers a range of
+                creative designing services to clients in order to help them
+                grow their business.</p>
+              <p class="text-white">Our team of experienced professionals helps drive your
+                business online by developing quality websites and mobile
+                applications that are user-friendly and easy to access. We
+                also perform top-notch SEO, manage paid advertising
+                campaigns, social media marketing, and take care of all
+                aspects of internet marketing.</p>
+              <p class="text-white">Regardless of the size or scope of your business, Leads and
+                Brands is always ready to serve your needs. By offering
+                innovative digital experiences, we have established
+                ourselves as one of the most respected and reputable
+                digital marketing agency in Bhopal and beyond
+              </p>
             </div>
           </div>
         </div>
-    </div>
-    <div class="move-text">
-      <div class="slide">
-        <h1 id="slide-text">Our history</h1>
-        <div class="text-descriptino">
-          <small id="no1">Our promoter had been working with leading National Media brands, large <br>sized Advertising Agencies in Mumbai, Delhi and Chennai, and e-commerce <br>platforms in Pune. Our story goes back to 2003 when we started an <br>Advertising and Marketing agency in Bhopal.</small><br><br>
-          <small id="no2">After setting out the Advertising Agency and working with top business<br> houses, we recognized the colossal opportunity to stand out in the Advertising<br>fraternity with the extraordinary creativity which we have in our core.</small><br><br>
-          <small id="no3">Moving forward in this journey we started our very own full-fledged Creative <br>Studio, offering high end content and designing solutions for print and other<br> offline media, and Brand Management Services to most of the big size clients.</small>
-        </div>
-        <div class="nextpara">
-         <h1 id="now">Now </h1>
-         <div class="scrollmount">
-          <i class="fa fa-arrow-right bounce degree360"></i>
-         </div>
+        <div class="col-lg-6">
+          <div class="services-grid-container">
+            <div class="service-card">
+              <img src="https://leadsandbrands.com/public/images/icon/n-icon/dg.svg" alt="Digital Marketing">
+              <h5>DIGITAL MARKETING</h5>
+            </div>
+            <div class="service-card">
+              <img src="https://leadsandbrands.com/public/images/icon/n-icon/seo.svg" alt="SEO">
+              <h5>SEO</h5>
+            </div>
+            <div class="service-card active">
+              <img src="https://leadsandbrands.com/public/images/icon/n-icon/ppc.svg" alt="PPC">
+              <h5>PPC</h5>
+            </div>
+            <div class="service-card">
+              <img src="https://leadsandbrands.com/public/images/icon/n-icon/sem.svg" alt="SEM">
+              <h5>SEM</h5>
+            </div>
+            <div class="service-card">
+              <img src="https://leadsandbrands.com/public/images/icon/n-icon/sm.svg" alt="SMM">
+              <h5>SMM</h5>
+            </div>
+            <div class="service-card">
+              <img src="https://leadsandbrands.com/public/images/icon/n-icon/cw.svg" alt="Content">
+              <h5>CONTENT</h5>
+            </div>
+            <div class="service-card">
+              <img src="https://leadsandbrands.com/public/images/icon/n-icon/wd.svg" alt="Web Dev">
+              <h5>WEB DEVELOPMENT</h5>
+            </div>
+            <div class="service-card">
+              <img src="https://leadsandbrands.com/public/images/icon/n-icon/ap.svg" alt="App Dev">
+              <h5>APP DEVELOPMENT</h5>
+            </div>
+            <div class="service-card">
+              <img src="https://leadsandbrands.com/public/images/icon/n-icon/email.svg" alt="Email Marketing">
+              <h5>EMAIL MARKETING</h5>
+            </div>
+          </div>
+
         </div>
       </div>
-      <!--<div class="slide">
-        <h1>Nowadays</h1>
-        <div class="text-descriptino">
-        <small>In 2015, we apprehended the usage of Internet and its rapid growth in a quick<br> timeframe, and the next marketing place was bound to be Social Media. It <br>then led us to studying about online marketing options, limitations of<br>traditional media and marketing opportunities on digital platforms.</small>
-        <small>Soon we started offering online marketing services to our existing clients, and<br> gradually realized that Digital Marketing will prove to be the most effective,<br> and cost effective way very soon.</small>
-        <small>Our expertise in Content and Creative development, deep understanding of <br>consumer behaviour, great analytical skills is an added advantage.</small>
-        <small>We are here to offer you convertible leads and sustainable brand for your <br>business. Put us on test!</small>
+  </section>
+  <!-- End Service -->
+
+  <!-- Offers -->
+  <section class="bg-grey-theme py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="">
+            <h1 class="fw-semibold text-white mb-4">All Services</h1>
+          </div>
         </div>
-        <div class="nextpara">
-        <h1>2003<i class="fa fa-arrow-left bounce" style="color: red;"></i></h1>
+      </div>
+      <div class="offers-card-grid">
+        <div class="service-offer">
+          <div class="">
+            <h3 class="text-white mb-3">Digital Marketing</h3>
+            <div class="offer-description">
+              <p class="mb-3">Digital Marketing is all about strategy and
+                planning & the next step in execution and
+                that's what Leads and Brands do for your
+                business. We help you to create and
+                innovative digital strategies for your business
+                that work for you by engaging with your
+                relevant audience. Which helps to generate
+                leads and traffic.</p>
+              <a href="#" class="btn btn-lg btn-outline-primary rounded-1 btn-position">Read more</a>
+            </div>
+          </div>
         </div>
-      </div>-->
+        <div class="service-offer">
+          <div class="">
+            <h3 class="text-white mb-3">SEO</h3>
+            <div class="offer-description">
+              <p class="mb-3">Search Engine Optimisation (SEO) is all about
+                getting organic traffic on your website and
+                understanding the behavior of user with our
+                website. A well-rounded helps Search Engine
+                Optimisation generates organic traffic which
+                helps your business to generate leads and
+                conversions.</p>
+              <a href="#" class="btn btn-lg btn-outline-primary rounded-1 btn-position">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-offer">
+          <div class="">
+            <h3 class="text-white mb-3">Paid Search Marketing</h3>
+            <div class="offer-description">
+              <p class="mb-3">Paid Search Engine Marketing is also known
+                as Search Engine Marketing or Pay Per Click
+                (PPC) in which we pay google to show our
+                results on top. Leads and Brands have the
+                right people, technology, and approach to
+                ensure your paid search activity is at the
+                forefront of digital innovation.</p>
+              <a href="#" class="btn btn-lg btn-outline-primary rounded-1 btn-position">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-offer">
+          <div class="">
+            <h3 class="text-white mb-3">App Development
+            </h3>
+            <div class="offer-description">
+              <p class="mb-3">Leads and Brands is also an Android mobile
+                app develppment company in Bhopal, India.
+                We know that, in today's digital world how
+                mobile applications have been improtant for
+                business. Our experts team of appicaltion
+                developers conducts a deep analysis of
+                client's requirements, and then let no extra
+                second go to waste for starting their work.</p>
+              <a href="#" class="btn btn-lg btn-outline-primary rounded-1 btn-position">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-offer">
+          <div class="">
+            <h3 class="text-white mb-3">Email Marketing
+            </h3>
+            <div class="offer-description">
+              <p class="mb-3">E-mail Marketing is all about promoting your
+                business's products and services through
+                sending mail to your existing clients. This
+                marketing helps you to retarget your
+                customers. The majority of businesses use
+                this platform for promotion and branding. E-
+                mail marketing allows for much higher
+                conversion rates.</p>
+              <a href="#" class="btn btn-lg btn-outline-primary rounded-1 btn-position">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-offer">
+          <div class="">
+            <h3 class="text-white mb-3">Bulk Messaging
+            </h3>
+            <div class="offer-description">
+              <p class="mb-3">Bulk messaging is all about sending
+                messages to our clients for remiding about
+                our services. And also if you introduce new
+                product or services in market and you want to
+                inform your customers you can take the help
+                of bulk messaging. There are many software
+                in market for sending and receiving bulk SMS.</p>
+              <a href="#" class="btn btn-lg btn-outline-primary rounded-1 btn-position">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-offer">
+          <div class="">
+            <h3 class="text-white mb-3">Google Local Listing
+            </h3>
+            <div class="offer-description">
+              <p class="mb-3">Google local listing also known as google my
+                business, where you can put all information
+                about your company. Your address, your
+                services your website, and everything you
+                want to share, as much relevant possible
+                information as possible, especially physical
+                location and keywords.
+              </p>
+              <a href="#" class="btn btn-lg btn-outline-primary rounded-1 btn-position">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-offer">
+          <div class="">
+            <h3 class="text-white mb-3">E-commerce Solution</h3>
+            <div class="offer-description">
+              <p class="mb-3">If you have an online business and you're
+                having long-term business goals then you
+                must need an e-commerce website. It'll help
+                your business to get more traffic and sales. At
+                Leads and Brands, we use advanced and
+                innovative software to build engaging user-
+                friendly websites or software. Which helps
+                your customer to find enjoyable and easy to
+                navigate designs.
+              </p>
+              <a href="#" class="btn btn-lg btn-outline-primary rounded-1 btn-position">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-offer">
+          <div class="">
+            <h3 class="text-white mb-3">Design
+            </h3>
+            <div class="offer-description">
+              <p class="mb-3">At Leads and Brands, we offer professional
+                and creative graphic services which helps
+                company to build brand image in market and
+                reflect your unique identity.
+              </p>
+              <a href="#" class="btn btn-lg btn-outline-primary rounded-1 btn-position">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="scroll">
-      <h1 id="scroll-texts">Testimonials</h1>
-       <div class="slidewrap">
-           <div class="wrapmove">
-             <div class="wraptext">
-                 <p id="move-text">I am writing this feedback because of how happy I am with leads and brands previously I have given my <br>website to many digital agencies for SEO purposes but non them able to bring my website on the front<br> page but Leads and Brands did they did right SEO for website and helped my website to generate<br> organic traffic. Best digital marketing agency in Bhopal, India.</p>
-                 <h3 id="move-sub-text">Radhika Jain</h3>
-                 <h5 id="move-multi-text">Delhi Bikers Group</h5>          
-             </div>
-             <div class="wraptext">
-                 <p id="move-text">We identify Leads and Brands as the top web development or web designing agency in Bhopal. I must <br>say, they believe in providing the most efficient and cost-effective solution for their clients. We think that<br> as a top web development company in Bhopal, their website designs turn visitors into paying clients.</p>
-                 <h3 id="move-sub-text">Dr. Soumyata Jain</h3>
-                 <h5 id="move-multi-text">Meditreat Clinic</h5>       
-             </div>
-             <div class="wraptext">
-               <p id="move-text">I have been working for them for the last two years and I never had any complaints from them they are<br> very professional and experts in their industry. If you are looking for a reliable and cost-effective digital<br> agency in Bhopal then leadsandbrands is the best option for you.</p>
-               <h3 id="move-sub-text">Abhinav Gupta</h3>
-               <h5 id="move-multi-text">Radiant Group</h5>      
-             </div>
-             <div class="wraptext">
-               <p id="move-text">Recently I hired Leads and Brands for my website designing and I am totally satisfied with their work. If<br> you are looking for website development in Bhopal then you can go with leadsandbrands. Highly<br> recommend them for any IT work.</p>
-               <h3 id="move-sub-text">Santosh</h3>
-               <h5 id="move-multi-text">Hospitality Essentials</h5>          
-             </div>
+  </section>
+  <!-- End Offers -->
+
+  <!-- Success Story -->
+  <Section class="success-story-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="text-center">
+            <h1 class="fw-semibold text-white mb-4">Success Stories</h1>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="success-details">
+            <div class="">
+              <h4>Motel Tamia</h4>
+              <div class="mb-3">
+                <span>Jungle Resort
+                </span>
+              </div>
+              <p>Motel Tamia is one of the best jungle properties in Satpuda
+                tiger reserve, India. They were planning an expansion, and
+                developed more cottages. Our main task was to generate
+                more leads, which could be converted into visitors.</p>
+              <p>Motel Tamia is one of the best jungle properties in Satpuda
+                tiger reserve, India. They were planning an expansion, and
+                developed more cottages. Our main task was to generate
+                more leads, which could be converted into visitors.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="success-value-increase">
+            <div class="success-list">
+              <ul class="success-item">
+                <li class="label">Occupancy</li>
+                <li class="value">65%</li>
+                <li class="arrow"><img src="https://leadsandbrands.com/public/images/icon/right-arrow.png" alt="arrow">
+                </li>
+                <li class="value">89%</li>
+                <li class="change up">+27%</li>
+              </ul>
+              <ul class="success-item">
+                <li class="label">Revenue</li>
+                <li class="value">5M</li>
+                <li class="arrow"><img src="https://leadsandbrands.com/public/images/icon/right-arrow.png" alt="arrow">
+                </li>
+                <li class="value">13M</li>
+                <li class="change up">+160%</li>
+              </ul>
+              <ul class="success-item">
+                <li class="label">Cost Per Conversion</li>
+                <li class="value">200</li>
+                <li class="arrow"><img src="https://leadsandbrands.com/public/images/icon/right-arrow.png" alt="arrow">
+                </li>
+                <li class="value">89</li>
+                <li class="change down">-55%</li>
+              </ul>
+              <ul class="success-item">
+                <li class="label">Investment</li>
+                <li class="value">0.12M</li>
+                <li class="arrow"><img src="https://leadsandbrands.com/public/images/icon/right-arrow.png" alt="arrow">
+                </li>
+                <li class="value">0.10M</li>
+                <li class="change down">-17%</li>
+              </ul>
+
+              <span class="line-border"></span>
+              <span class="line-para">*Numbers have been modified for compliance purposes.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-4">
+        <div class="col-lg-9 col-md-11 col-12 mx-auto">
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-6">
+              <div class="milti-img banerimg"></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6">
+              <div class="milti-img banerimg0"></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6">
+              <div class="milti-img banerimg00"></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6">
+              <div class="milti-img banerimg000"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+  <!-- End Success Story -->
+
+  <!-- Core Team -->
+  <section class="bg-black py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="team-details">
+            <div class="">
+              <h1 class="fw-semibold text-white mb-4">Core team</h1>
+            </div>
+            <p class="fs-2 mb-0 color-primary">Teamwork</p>
+            <p class="fs-2 mb-0 text-white">makes the</p>
+            <p class="fs-2 mb-0 color-primary">dream work.</p>
+          </div>
+        </div>
+        <div class="col-lg-8 mt-lg-0 mt-md-0 mt-4">
+          <div class="team-container">
+            <div class="team-card"
+              style="background-image: url('https://leadsandbrands.com/public/images/team/1.jpeg')">
+              <div class="team-overlay">
+                <p class="team-name">Praharsh</p>
+                <small class="team-role">Chief Marketing Officer</small>
+              </div>
+            </div>
+            <div class="team-card"
+              style="background-image: url('https://leadsandbrands.com/public/images/team/2.jpeg')">
+              <div class="team-overlay">
+                <p class="team-name">Sanjay</p>
+                <small class="team-role">Chief Strategic Planner</small>
+              </div>
+            </div>
+            <div class="team-card"
+              style="background-image: url('https://leadsandbrands.com/public/images/team/3.jpeg')">
+              <div class="team-overlay">
+                <p class="team-name">Vikas</p>
+                <small class="team-role">Head-Digital Marketing</small>
+              </div>
+            </div>
+            <div class="team-card"
+              style="background-image: url('https://leadsandbrands.com/public/images/team/5.jpeg')">
+              <div class="team-overlay">
+                <p class="team-name">Stuti</p>
+                <small class="team-role">Head-Content Writing</small>
+              </div>
+            </div>
+            <div class="team-card" style="background-image: url('https://leadsandbrands.com/public/images/team/6.jpg')">
+              <div class="team-overlay">
+                <p class="team-name">Boozo</p>
+                <small class="team-role">Chief Happiness Officer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Core Team -->
+
+  <!-- History -->
+  <section class="history-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="hsitor-details">
+            <div class="">
+              <h1 class="fw-semibold text-white mb-4">Our history</h1>
+            </div>
+            <p>Our promoter had been working with leading National Media brands, large
+              sized Advertising Agencies in Mumbai, Delhi and Chennai, and e-commerce
+              platforms in Pune. Our story goes back to 2003 when we started an
+              Advertising and Marketing agency in Bhopal.</p>
+            <p>After
+              Moving forward in this journey we started our very own full-fledged Creative
+              Studio, offering high end content and designing solutions for print and other
+              offline media, and Brand Management Services to most of the big size clients.</p>
+            <p>
+              Moving forward in this journey we started our very own full-fledged Creative
+              Studio, offering high end content and designing solutions for print and other
+              offline media, and Brand Management Services to most of the big size clients.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="w-25 mx-auto history-scroll-icon">
+            <h1 class="history-label">Now</h1>
+            <div class="">
+              <i class="fa fa-arrow-right bounce arrow-animated"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End History -->
+
+  <!-- Testimonials -->
+  <section class="bg-grey-theme py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="text-center">
+            <h1 class="fw-semibold text-white mb-4">Testimonials</h1>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="slidewrap">
+            <div class="wrapmove">
+              <div class="wraptext">
+                <p id="move-text">I am writing this feedback because of how happy I am with leads and brands previously
+                  I have
+                  given mywebsite to many digital agencies for SEO purposes but non them able to bring my website
+                  on the
+                  front page but Leads and Brands did they did right SEO for website and helped my website to
+                  generate
+                  organic traffic. Best digital marketing agency in Bhopal, India.</p>
+                <h3 id="move-sub-text">Radhika Jain</h3>
+                <h5 id="move-multi-text">Delhi Bikers Group</h5>
+              </div>
+              <div class="wraptext">
+                <p id="move-text">We identify Leads and Brands as the top web development or web designing agency in
+                  Bhopal. I
+                  must say, they believe in providing the most efficient and cost-effective solution for their
+                  clients. We
+                  think that as a top web development company in Bhopal, their website designs turn visitors into
+                  paying
+                  clients.</p>
+                <h3 id="move-sub-text">Dr. Soumyata Jain</h3>
+                <h5 id="move-multi-text">Meditreat Clinic</h5>
+              </div>
+              <div class="wraptext">
+                <p id="move-text">I have been working for them for the last two years and I never had any complaints
+                  from them
+                  they are very professional and experts in their industry. If you are looking for a reliable and
+                  cost-effective digital agency in Bhopal then leadsandbrands is the best option for you.</p>
+                <h3 id="move-sub-text">Abhinav Gupta</h3>
+                <h5 id="move-multi-text">Radiant Group</h5>
+              </div>
+              <div class="wraptext">
+                <p id="move-text">Recently I hired Leads and Brands for my website designing and I am totally satisfied
+                  with
+                  their work. If you are looking for website development in Bhopal then you can go with
+                  leadsandbrands.
+                  Highly recommend them for any IT work.</p>
+                <h3 id="move-sub-text">Santosh</h3>
+                <h5 id="move-multi-text">Hospitality Essentials</h5>
+              </div>
             </div>
             <a id="prev" href="#" onclick="control(1)">&#8810;</a>
             <a id="next" href="#" onclick="control(-1)">&#8811;</a>
+          </div>
         </div>
-    </div>
-    <div class="footer">
-      <h5 class="main-heading text-left">Say Hello...</h5>
-      <div class="row">
-       <div class="enqueryform">
-        <form action="" id="fullfill">
-         <div class="form1">
-          <label for="exampleInputEmail1" id="updown">Name</label><br>
-          <input type="text" name="name" class="form-control" placeholder="Name" required=""><br><br>
-
-          <label for="exampleInputEmail1" id="updown">Website</label><br>
-          <input type="url" name="website" class="form-control" placeholder="Website" required=""><br></br>
-
-          <label for="exampleInputEmail1" id="updown">Contact No.</label><br>
-          <input type="tel" name="contact" class="form-control" placeholder="Contact No." maxlength="12" minlength="10" required=""><br><br>
-
-          <label for="exampleInputEmail1" id="updown">Message</label><br>
-          <textarea name="mess----------age" placeholder="Message" class="form-control" id="" cols="30" rows="1" required=""></textarea><br><br>
-
-         </div>
-         <div class="form2"  style="float: right;">
-          <label for="exampleInputEmail1" id="updown">Business Name</label><br>
-          <input type="text" name="bname" class="form-control" placeholder="Business Name" required=""><br><br>
-
-          <label for="exampleInputEmail1" id="updown">Email Address</label><br>
-          <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Email Address" required=""><br><br>
-
-          <label for="exampleInputEmail1" id="updown">Subject</label><br>
-          <input type="text" name="subject" class="form-control" placeholder="Subject" required=""><br><br>
-
-          <input type="submit" class="btnss" value="Submit" name="submit">
-         </div>
-        </form>
-        </div>
-       </div>
-
-      </div>
-      <div class="columns">
-
-        <div class="map-point">
-          <span> <img src="https://leadsandbrands.com/public/images/icon/marker.png" alt="location"></span>
-          <span id="footer-icon-text">Leads & Brands</span>
-
-        </div>
-        <div class="social-m">
-            <p><a href="https://leadsandbrands.com/career">Career</a> <span style="font-weight: bold;color: #fff;font-size: 15px;top: -15px;">|</span> <a href="https://leadsandbrands.com/blog">Blog</a> <span style="font-weight: bold;color: #fff;font-size: 15px;">| </span> <a href="https://leadsandbrands.com/web-developement-services-bhopal">Services</a> <span style="font-weight: bold;color: #fff;font-size: 15px;">|</span> <a href="https://leadsandbrands.com/sitemap.html">Sitemap</a></p>
-            <label>Email : </label> <a href="mailto:info@leadsandbrands.com"> info@leadsandbrands.com</a><br>
-      
-            <label>Contact No :</label> <a href="tel:+917553553119"> +91 755 3553119</a>, <a href="tel:+917974777707"> +91-7974777707</a><br>
-  
-            <label>Address : </label><a href="https://goo.gl/maps/THXbKCZzaksDJfKn8" target="_blank"> Opp. South Avenue, G3, Gulmohar, Bhopal. 462039</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p id="desk-f">Copyright © 2023 All Rights Reserved By : <a href="https://leadsandbrands.com/" class="brand">Leads &amp; Brands.</a> </p>
       </div>
     </div>
-<script>
-   let flag = 0;
-  
-   setInterval ( function control(x) {
-    flag = flag + 1;
-    show(flag);
-   },2000);
+  </section>
+  <!-- End Testimonials -->
 
-function show(num) {
-    let slides = document.getElementsByClassName("wraptext");
+  <!-- Footer -->
+  <div class="footer-section pt-5">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-7">
+          <div class="enqueryform">
+            <div class="">
+              <h1 class="fw-semibold text-white mb-4">Say Hello...</h1>
+            </div>
+            <form action="" method="">
+              <div class="row">
+                <div class="col-lg-6 mb-2">
+                  <div class="">
+                    <label for="exampleInputEmail1" class="form-lavel text-white fs-6 mb-0">Name</label>
+                    <input type="text" name="name" class="form-control enquire-input" placeholder="Name" required="">
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-2">
+                  <div class="">
+                    <label for="exampleInputEmail1" class="form-lavel text-white fs-6 mb-0">Email Address</label>
+                    <input type="email" name="email" class="form-control enquire-input" aria-describedby="emailHelp"
+                      placeholder="Email Address" required="">
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-2">
+                  <div class="">
+                    <label for="exampleInputEmail1" class="form-lavel text-white fs-6 mb-0">Contact No.</label>
+                    <input type="tel" name="contact" class="form-control enquire-input" placeholder="Contact No."
+                      maxlength="12" minlength="10" required="">
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-2">
+                  <div class="">
+                    <label for="exampleInputEmail1" class="form-lavel text-white fs-6 mb-0">Business Name</label>
+                    <input type="text" name="bname" class="form-control enquire-input" placeholder="Business Name"
+                      required="">
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-2">
+                  <div class="">
+                  </div>
+                  <label for="exampleInputEmail1" class="form-lavel text-white fs-6 mb-0">Website</label>
+                  <input type="url" name="website" class="form-control enquire-input" placeholder="Website" required="">
+                </div>
+                <div class="col-lg-6 mb-2">
+                  <div class="">
+                    <label for="exampleInputEmail1" class="form-lavel text-white fs-6 mb-0">Subject</label>
+                    <input type="text" name="subject" class="form-control enquire-input" placeholder="Subject"
+                      required="">
+                  </div>
+                </div>
+                <div class="col-lg-12 mb-2">
+                  <div class="">
+                    <label for="exampleInputEmail1" class="form-lavel text-white fs-6 mb-0">Message</label>
+                    <textarea name="mess----------age" placeholder="Message" class="form-control address-input" id=""
+                      cols="40" rows="1" required=""></textarea>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <button class="btn btn-primary w-100">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-5 position-relative pt-lg-0 pt-md-0 pt-4">
+          <div class="map-point d-flex align-items-center mb-3">
+            <span>
+              <img src="https://leadsandbrands.com/public/images/icon/marker.png" alt="location" height="35" width="25">
+            </span>
+            <span id="footer-icon-text" class="text-white ms-2">Leads & Brands</span>
+          </div>
+          <div class="fixed-info">
+            <div class="social-m mb-2">
+              <ul class="d-flex justify-content-lg-center justify-content-md-center justify-content-center gap-2 ps-0 mb-0 list-unstyled">
+                <li><a href="#" class="color-primary fw-bold text-decoration-none">Career <span
+                      class="text-white">|</span></a></li>
+                <li><a href="#" class="color-primary fw-bold text-decoration-none">Blog <span
+                      class="text-white">|</span></a></li>
+                <li><a href="#" class="color-primary fw-bold text-decoration-none">Services <span
+                      class="text-white">|</span></a></li>
+                <li><a href="#" class="color-primary fw-bold text-decoration-none">Sitemap</a></li>
+              </ul>
+            </div>
+            <!-- Contact Info -->
+            <div class="lh-base text-white fs-7 fw-medium">
+              <div class="mb-1">
+                <label>Email: </label>
+                <a href="mailto:info@leadsandbrands.com"
+                  class="text-white text-decoration-none">info@leadsandbrands.com</a>
+              </div>
+              <div class="mb-1">
+                <label>Contact No: </label>
+                <a href="tel:+917553553119" class="text-white text-decoration-none">+91 755 3553119</a>,
+                <a href="tel:+917974777707" class="text-white text-decoration-none">+91-7974777707</a>
+              </div>
+              <div>
+                <label>Address: </label>
+                <a href="https://goo.gl/maps/THXbKCZzaksDJfKn8" target="_blank" class="text-white text-decoration-none">
+                  Opp. South Avenue, G3, Gulmohar, Bhopal. 462039
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    if (num == slides.length) {
-        flag = 0;
-        num = 0;
-    }
-    if (num < 0) {
-        flag = slides.length - 1;
-        num = slides.length - 1;
-    }
+      </div>
+      <div class="col-lg-12 py-2">
+        <div class="text-center">
+          <p class="text-white mb-0 fs-7">Copyright © 2023 All Rights Reserved By : <a
+              href="https://leadsandbrands.com/" class="color-primary">Leads
+              &amp; Brands.</a> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Footer -->
 
-    for (var y of slides) {
-        y.style.display = "none";
-    }
 
-    slides[num].style.display = "block";
-}
-
-var responsiveSlider = function() {
-    var slider = document.getElementById("slide");
-    var sliderWidth = slider.offsetWidth;
-    var slideList = document.getElementById("slideWrap");
-    var count = 1;
-    var items = slideList.querySelectorAll("li").length;
-    var prev = document.getElementById("prev");
-    var next = document.getElementById("next");
-
-    window.addEventListener('resize', function() {
-       sliderWidth = slider.offsetWidth;
-    });
-
-    var prevSlide = function() {
-    if(count > 1) {
-    count = count - 2;
-    slideList.style.left = "-" + count * sliderWidth + "px";
-    count++;
-    }
-    else if(count = 1) {
-    count = items - 1;
-    slideList.style.left = "-" + count * sliderWidth + "px";
-    count++;
-    }
-  };
-
-    var nextSlide = function() {
-    if(count < items) {
-    slideList.style.left = "-" + count * sliderWidth + "px";
-    count++;
-    }
-    else if(count = items) {
-    slideList.style.left = "0px";
-    count = 1;
-    }
-  };
-
-  next.addEventListener("click", function() {
-  nextSlide();
-  });
-
-  prev.addEventListener("click", function() {
-  prevSlide();
-  });
-
-  setInterval(function() {
-  nextSlide()
-  }, 2000);
-  };
-
-  window.onload = function() {
-  responsiveSlider();  
-  }
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+  <script src="./assets/main.js"></script>
 </body>
+
 </html>
